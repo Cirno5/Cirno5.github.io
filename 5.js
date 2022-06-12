@@ -2,7 +2,7 @@
 // 音乐播放器
 var musicNode = document.getElementsByClassName('music')[0];
 var mlist = document.getElementsByClassName('mlist')[0];
-var lis = document.getElementsByClassName('lii');//ByTagName
+var lis = document.getElementsByTagName('li');//ByTagName
 var len = lis.length;
 
 

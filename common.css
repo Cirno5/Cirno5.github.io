@@ -1,0 +1,393 @@
+@import "reset.css";
+
+/* 统一样式开始 */
+
+body {
+    margin: 0;
+}
+
+body {
+    background-clip: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #002fff;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 0.5em 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.8em;
+}
+
+h6 {
+    font-size: 0.6em;
+}
+
+/* 统一样式结束 */
+
+
+
+/* 通用样式开始 */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+/*防止高度坍塌*/
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 顶部导航栏开始 */
+.navbar {
+    overflow: hidden;
+    background-color: rgb(62, 139, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.navbar .active {
+    background-color: #001bb4;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 0.5em 0;
+    float: left;
+}
+
+.navbar .btn {
+
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 0.5em 0;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+
+.dropdown .btn {
+    padding: 20px 20px;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    color: white;
+
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover:not(.active),
+.dropdown:hover:not(.active) .btn {
+    background-color: rgb(0, 70, 201);
+}
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 230px;
+    box-shadow: 0px 16px 20px 0px rgba(0, 0, 0, 0.274);
+}
+
+.dropdown-menu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-menu a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 顶部导航栏结束 */
+
+
+/* 普通容器样式 */
+.container {
+    /*width:1000px;*/
+    /* margin:0 auto; */
+    /* margin-bottom: 100px; */
+    left: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    display: inline-block;
+    height: 90%;
+    margin: 2rem;
+    position: relative;
+    width: 90%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    padding-top: 20px;
+
+}
+
+
+
+/* .container p:not(.main p){
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+ } */
+.container {
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+    /* overflow: hidden; */
+}
+
+
+.container:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/*左介绍*/
+.aside-left .title {
+    font-size: 24px;
+}
+
+.dark-color {
+    color: #494949;
+}
+
+.containerleft {
+    /*width:1000px;*/
+    /*margin:0 auto;*/
+    /* margin-bottom: 100px; */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    display: fixed;
+    /* height: 500px; */
+    margin-left: 50px;
+    margin-top: 40px;
+    position: fixed;
+    top: 70px;
+    width: 250px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    /* transition: all 0.3s cubic-bezier(.25, .8, .25, 1); */
+    /* padding-top: 20px; */
+
+}
+
+.containerleft img {
+    position: relative;
+    left: 70px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-bottom: 20px;
+
+}
+
+.containerleft h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.containerleft h3 {
+    margin-left: 10px;
+
+}
+
+.containerleft p {
+    padding: 10px;
+    text-align: center;
+}
+
+.containerleft p a {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+
+    padding: 5px;
+}
+
+.containerleft .main {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 左右部分 */
+.lleft {
+    float: left;
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    background-color: rgba(0, 89, 255, 0.61);
+}
+
+.rright {
+    /* background-color: rgba(255, 255, 255, 0.384); */
+    margin-left: 360px;
+    height: 100%;
+}
+
+/* 文章手风琴折叠效果 */
+.page {
+    width: 90%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+button.accordion {
+    background-color: rgba(255, 255, 255, 0.856);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+
+}
+
+button.accordion.active,
+button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+/*轮播图*/
+.moveimgbox img {
+    width: 800px;
+    height: 500px;
+}
+
+.moveimgbox {
+    height: 500px;
+    width: 800px;
+    margin: 50px auto;
+    /* border: 3px black double; */
+    position: relative;
+    left: 0px;
+
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+}
+
+#moveimglist {
+    width: 4800px;
+    height: 500px;
+    list-style: none;
+    position: absolute;
+    left: 0px;
+}
+
+#moveimglist li {
+    float: left;
+}
+
+#movebtnlist {
+    width: 400px;
+    left: 250px;
+    top: 450px;
+    position: absolute;
+    list-style: none;
+
+}
+
+#movebtnlist li {
+    color: black;
+    text-align: center;
+    float: left;
+    width: 60px;
+    height: 25px;
+    margin-left: 10px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: default;
+
+}
+
+/* 通用样式结束 */
+
+/* body .bilibvideo iframe{
+    border:#001bb4;
+    background: #001bb4;
+    
+} */
+
+
+/* .transition {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: 5s;
+} */

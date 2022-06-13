@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <title>5.1のmusic</title>
+
+    <style>
+        /* 音乐播放器开始 */
+        /* *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            overflow-x:hidden；
+        } */
+body
+
+{
+
+-moz-user-select: none; /*火狐*/
+
+-webkit-user-select: none; /*webkit浏览器*/
+
+-ms-user-select: none; /*IE10*/
+
+-khtml-user-select: none; /*早期浏览器*/
+
+user-select: none;
+
+}
+        body .cm {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+
+
+        }
+
+        #cmaudio {
+            /* position: relative; */
+            /* height: 250px; */
+            width: 300px;
+            background-color: #c9c9c9;
+            border: 3px solid rgb(75, 75, 75);
+            /* border-radius: 10%; */
+            /* background-image: url(demo.jpg); */
+            /* background-size: cover;
+            margin-top: 50px;
+            margin-left:50px; */
+
+
+
+        }
+
+        .play {
+            color: rgb(255, 255, 255);
+
+            background-color: #555555;
+            /* margin: 0 6px; */
+
+        }
+
+        #cmaudio .audioo {
+            background: rgb(245, 245, 245);
+            background-size: cover;
+            border-radius: none;
+
+        }
+
+        #cmaudio .listt {
+            overflow-y: auto;
+            max-height: 410px;
+            overflow-x: hidden；
+        }
+
+        #cmaudio .mlist {
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.514);
+            height: auto;
+            /* border-radius: 5px; */
+
+
+        }
+
+        #cmaudio ul li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            /* border-radius: 4px; */
+
+        }
+
+        #cmaudio ul li:hover {
+            /* line-height:45px; */
+            text-align: center;
+            cursor: pointer;
+            /* margin: 0 5px; */
+            background-color: #999999;
+            /* border-radius: 10px; */
+
+        }
+
+        /* 音乐播放器结束 */
+    </style>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+</head>
+
+<body>
+    <!-- ondragstart='return false'  -->
+    <!-- 播放器开始 -->
+    <div id="blackSquare" style="z-index: 114514;position: fixed; left:30px;
+ top:30px;width:370px; height:550px; background-color: rgba(0, 0, 0, 0.26);cursor: pointer; ">
+        <!-- border-radius: 10px; -->
+        <div class="cm">
+            <div id=cmaudio>
+                <div class="audioo">
+                    <audio src="" controls class="music"></audio>
+                </div>
+                <div class="listt">
+                    <ul class="mlist"  >
+                        <!-- oncontextmenu='return false'  onselectstart='return false' 
+                    onselect='document.selection.empty()'  oncopy='document.selection.empty()'  onbeforecopy='return false' 
+                    onmouseup='document.selection.empty()' -->
+                        <li>Судно (Борис Рижий)</li>
+                        <li>Тоска</li>
+                        <li>No Surprises</li>
+                        <li>Fake Plastic Trees</li>
+                        <li>Karma Police</li>
+
+                        <li>Let Down</li>
+                        <li>Paranoid Android</li>
+                        <li>Everything In Its Right Place</li>
+                        <li>Black Star</li>
+                        <li>The Blacker the Berry</li>
+
+                        <li>m.A.A.d city</li>
+                        <li>Black Boy Fly (Bonus Track)</li>
+                        <li>A.D.H.D</li>
+                        <li>HiiiPower</li>
+                        <li>You Ain't Gotta Lie (Momma Said)</li>
+
+                        <li>How Much a Dollar Cost</li>
+                        <li>These Walls</li>
+                        <li>u</li>
+                        <li>Wesley's Theory</li>
+                        <li>Institutionalized</li>
+
+                        <li>Complexion (A Zulu Love)</li>
+                        <li>family ties</li>
+                        <li>*****, Don't Kill My Vibe</li>
+                        <li>i</li>
+                        <li>嘘つき</li>
+
+                        <li>未读消息</li>
+                        <li>パラサイト（寄生虫）</li>
+                        <li>Y.O.U.</li>
+                        <li>BLESSING</li>
+                        <li>Wish You Were Here</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 播放器结束 -->
+    <div class="commentcm ">
+        <div id="vcomments"></div>
+    </div>
+</body>
+<script>
+
+    // 音乐播放器
+    var musicNode = document.getElementsByClassName('music')[0];
+    var mlist = document.getElementsByClassName('mlist')[0];
+    var lis = document.getElementsByTagName('li');//
+    var len = lis.length;
+
+
+    //"https://music.163.com/song/media/outer/url?id=xxx.mp3",
+    var musicsrc = [
+        "https://music.163.com/song/media/outer/url?id=1413481294.mp3",// Судно (Борис Рижий)
+        "https://music.163.com/song/media/outer/url?id=1413481293.mp3",// Тоска
+        "https://music.163.com/song/media/outer/url?id=22497479.mp3",// No Surprises
+        "https://music.163.com/song/media/outer/url?id=18795423.mp3",// Fake Plastic Trees
+        "https://music.163.com/song/media/outer/url?id=22497475.mp3",// Karma Police
+
+        "https://music.163.com/song/media/outer/url?id=22497474.mp3",// Let Down
+        "https://music.163.com/song/media/outer/url?id=22497471.mp3",// Paranoid Android
+        "https://music.163.com/song/media/outer/url?id=22559034.mp3",// Everything In Its Right Place
+        "https://music.163.com/song/media/outer/url?id=18795434.mp3",// Black Star
+        "https://music.163.com/song/media/outer/url?id=31010345.mp3",// The Blacker the Berry
+
+        "https://music.163.com/song/media/outer/url?id=18943535.mp3",// m.A.A.d city
+        "https://music.163.com/song/media/outer/url?id=18943526.mp3",// Black Boy Fly (Bonus Track)
+        "https://music.163.com/song/media/outer/url?id=18943471.mp3",// A.D.H.D
+        "https://music.163.com/song/media/outer/url?id=18943484.mp3",// HiiiPower
+        "https://music.163.com/song/media/outer/url?id=31010344.mp3",// You Ain't Gotta Lie (Momma Said)
+
+        "https://music.163.com/song/media/outer/url?id=31010342.mp3",// How Much a Dollar Cost
+        "https://music.163.com/song/media/outer/url?id=36496036.mp3",// These Walls
+        "https://music.163.com/song/media/outer/url?id=31010337.mp3",// u
+        "https://music.163.com/song/media/outer/url?id=31010333.mp3",// Wesley's Theory
+        "https://music.163.com/song/media/outer/url?id=31010335.mp3",// Institutionalized
+
+        "https://music.163.com/song/media/outer/url?id=31010341.mp3",// Complexion (A Zulu Love)
+        "https://music.163.com/song/media/outer/url?id=1873248502mp3",// family ties
+        "https://music.163.com/song/media/outer/url?id=18943529.mp3",// *****, Don't Kill My Vibe
+        "https://music.163.com/song/media/outer/url?id=31010346.mp3",//
+        "https://music.163.com/song/media/outer/url?id=1882027031.mp3",//
+
+        "https://music.163.com/song/media/outer/url?id=538361098.mp3",//
+        "https://music.163.com/song/media/outer/url?id=1915002109.mp3",//
+        "https://music.163.com/song/media/outer/url?id=1417797814.mp3",//
+        "https://music.163.com/song/media/outer/url?id=30830202.mp3",//
+        "https://music.163.com/song/media/outer/url?id=4237923.mp3"];//
+    //网易云歌的url
+
+    musicNode.src = musicsrc[0];
+    for (var i = 0; i < len; i++) {//单击改变playmusic
+        (function (i) {
+            lis[i].onclick = function () {
+                musicNode.src = musicsrc[i];
+                musicNode.load();
+                musicNode.play();
+                for (var j = 0; j < len; j++) {
+                    lis[j].className = '';
+                }
+                this.className = 'play';
+            }
+        })(i);
+    }
+    musicNode.onended = function () {//音乐播放完后自动下一曲
+        var ended = getPlay();
+        if (ended == len - 1) {//若为最后一曲则放第一曲
+            musicNode.src = musicsrc[0];
+            lis[0].className = 'play'
+            lis[ended].className = '';
+            musicNode.load();
+            musicNode.play();
+        } else {
+            musicNode.src = musicsrc[ended + 1];
+            lis[ended + 1].className = 'play';
+            lis[ended].className = '';
+            musicNode.load();
+            musicNode.play();
+        }
+
+    }
+    function getPlay() {//获取正在播放music的li
+        for (var i = 0; i < len; i++) {
+            if (lis[i].getAttribute('class') == 'play') {
+                return i
+            }
+        }
+    }
+
+
+
+    //拖拽功能
+    window.onload = () => {
+        //获取拖拽实验对象
+        let el = document.getElementById("blackSquare");
+        //在该对象上绑定鼠标点击事件
+        el.onmousedown = (e) => {
+            //鼠标按下，计算鼠标触点距离元素左侧和顶部的距离
+            let disX = e.clientX - el.offsetLeft;
+            let disY = e.clientY - el.offsetTop;
+            document.onmousemove = function (e) {
+                //计算需要移动的距离
+                let tX = e.clientX - disX;
+                let tY = e.clientY - disY;
+                //移动当前元素
+                if (tX >= 0 && tX <= window.innerWidth - el.offsetWidth) {
+                    el.style.left = tX + 'px';
+                }
+                if (tY >= 0 && tY <= window.innerHeight - el.offsetHeight) {
+                    el.style.top = tY + 'px';
+                }
+            };
+            //鼠标松开时，注销鼠标事件，停止元素拖拽。
+            document.onmouseup = function (e) {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+        }
+    }
+</script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Xpxum9LQ7XhM8b1cb8thSsK1-gzGzoHsz',
+        appKey: 'OxTaKue6Ph7LA4EIseCHy3Hk'
+    })
+</script>
+
+</html>

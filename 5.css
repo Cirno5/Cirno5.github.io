@@ -1,20 +1,7 @@
 @import "reset.css";
 @import "common.css";
-@import "recommend.css";
 
 
-/*普通容器文本*/
-
-.container h2 {
-    margin-left: 20px;
-}
-.container p {
-    padding: 10px;
-    font-size: 16px;
-    /* margin-left: 10px;
-    margin-right: 10px; */
-    background-color: rgba(255, 255, 255, 0.856);
-}
 
 
 
@@ -26,12 +13,26 @@
             list-style: none;
             overflow-x:hidden；
         } */
+.cm .name {
+    font-size: 20px;
+    color: rgb(43, 86, 226);
+    font-weight: bold;
+
+}
+
+.cm .nul {
+    padding: 10px;
+    background-color: rgb(226, 226, 226);
+}
+
 body .cm {
-    position: absolute;
+    position: realitive;
+    float: left;
     /* right: 30px;
     bottom: 30px; */
-    left:40px;
-    top:60px;
+    margin-left: 40px;
+    margin-top: 60px;
+    z-index: 99;
 
 }
 
@@ -103,5 +104,13 @@ body .cm {
 
 /* 音乐播放器结束 */
 
-
-
+.commentcm {
+    /* background-color: rgb(209, 229, 255); */
+    width:410px;
+    position: relative;
+    top: 60px;
+    right: 53.5px;
+    /* left: 53.5px; */
+    margin-left: 90px;
+    float: left;
+}

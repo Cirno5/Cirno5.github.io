@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <title>5のmusic</title>
+
+    <style>
+        /* 音乐播放器开始 */
+        /* *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            overflow-x:hidden；
+
+
+        } */
+        .cm .name {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
+}
+
+        .cm .nul {
+    padding: 10px;
+    background-color: rgb(226, 226, 226);
+}
+
+        .chi {
+            background-color: #fffffff5;
+        }
+
+        .piant {
+            width: 100%;
+            background-image: url(2206133.jpg), url(2206134.jpg), url(2206135.jpg);
+            background-repeat: no-repeat, no-repeat, repeat-y;
+            background-position: center top, center bottom, center top;
+        }
+
+        body {
+
+            -moz-user-select: none;
+            /*火狐*/
+
+            -webkit-user-select: none;
+            /*webkit浏览器*/
+
+            -ms-user-select: none;
+            /*IE10*/
+
+            -khtml-user-select: none;
+            /*早期浏览器*/
+
+            user-select: none;
+
+        }
+
+        body .cm {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+
+
+        }
+
+        #cmaudio {
+            /* position: relative; */
+            /* height: 250px; */
+            width: 300px;
+            background-color: #c9c9c9;
+            border: 3px solid rgb(75, 75, 75);
+            /* border-radius: 10%; */
+            /* background-image: url(demo.jpg); */
+            /* background-size: cover;
+            margin-top: 50px;
+            margin-left:50px; */
+
+
+
+        }
+
+        .play {
+            color: rgb(255, 255, 255);
+
+            background-color: #555555;
+            /* margin: 0 6px; */
+
+        }
+
+        #cmaudio .audioo {
+            background: rgb(245, 245, 245);
+            background-size: cover;
+            border-radius: none;
+
+        }
+
+        #cmaudio .listt {
+            overflow-y: auto;
+            max-height: 410px;
+            overflow-x: hidden；
+        }
+
+        #cmaudio .mlist {
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.514);
+            height: auto;
+            /* border-radius: 5px; */
+
+
+        }
+
+        #cmaudio ul li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            /* border-radius: 4px; */
+
+        }
+
+        #cmaudio ul li:hover {
+            /* line-height:45px; */
+            text-align: center;
+            cursor: pointer;
+            /* margin: 0 5px; */
+            background-color: #999999;
+            /* border-radius: 10px; */
+
+        }
+
+        /* 音乐播放器结束 */
+    </style>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+</head>
+
+<body style="background-image:url(2206133.jpg),url(2206134.jpg),url(2206135.jpg);">
+   
+    <!-- ondragstart='return false'  -->
+    <!-- 播放器开始 -->
+    <div id="blackSquare" style="z-index: 114514;position: fixed; left:30px;
+ top:30px;width:370px; height:550px; background-color: rgba(0, 0, 0, 0.26);cursor: pointer; ">
+        <!-- border-radius: 10px; -->
+        <div class="cm">
+            <div id=cmaudio>
+                <div class="audioo">
+                    <audio src="" controls class="music"></audio>
+                </div>
+                <div class="listt">
+                    <ul class="mlist">
+                        <center>
+                        <!-- 1&16-1 -->
+                        <p class="name">Ultimate Grammy Collection -
+                            Contemporary Rock</p>
+
+                        <li>Cult Of Personality</li>
+                        <li>Ain't It Heavy</li>
+                        <li>Runaway Train</li>
+                        <li>Plush</li>
+                        <li>Black Hole Sun</li>
+
+                        <li>Run Around</li>
+                        <li>Give Me One Reason</li>
+                        <li>Bullet With Butterfly</li>
+                        <li>Block Rockin' Bea</li>
+                        <li>Crimina</li>
+
+                        <li>Fly Away</li>
+                        <!-- <li>In My Place(无）</li> -->
+                        <p class="nul">In My Place(无）</p>
+                        <li>Gravedigger</li>
+                        <li>Seven Nation Army</li>
+                        <li>Bring Me To Life</li>
+
+                        <li>Boulevard Of Broken Dreams</li>
+
+                        <!-- 2&41 -->
+                        <p class="name">The Essential Clash</p>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+
+                        <!-- 3&12 -->
+                        <p class="name">Ultimate Grammy Collection -
+                            Never Mind The Bollocks, Here’s The *** Pistols</p>
+
+                        <li>Holidays In The Sun</li>
+                        <li>Bodies</li>
+                        <li>No Feelings</li>
+                        <li>Liar</li>
+                        <li>God Save The Queen</li>
+
+                        <li>Problems</li>
+                        <li>Seventeen</li>
+                        <li>Anarchy In The UK</li>
+                        <li>Submission</li>
+                        <li>Pretty Vacant</li>
+
+                        <li>New York</li>
+                        <li>EMI</li>
+
+                        <!-- 4&47 -->
+                        <p class="name">
+                            In The Court Of The Crimson King (40th Anniversary Series Deluxe Edition)
+                        </p>
+                        <li>21st Century Schizoid Man (2009 Stereo Mix)</li>
+                        <li>I Talk To The Wind (2009 Stereo Mix)</li>
+                        <li>Epitaph (2009 Stereo Mix)</li>
+                        <li>Moonchild (2009 Stereo Mix)</li>
+                        <li>The Court Of The Crimson King (2009 Stereo Mix)</li>
+
+                        <li>Moonchild(Full Version)</li>
+                        <li>I Talk To The Wind(Duo version)</li>
+                        <li>I Talk To The Wind(Alternate mix)</li>
+                        <li>Epitaph(Backing Track)</li>
+                        <li>Wind Session</li>
+
+                        <li>21st Century Schizoid Man (Original Master Edition 2004)</li>
+                        <li>I Talk To The Wind (Original Master Edition 2004)</li>
+                        <li>Epitaph (Original Master Edition 2004)</li>
+                        <li>Moonchild (Original Master Edition 2004)</li>
+                        <li>The Court Of The Crimson King (Original Master Edition 2004)</li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+
+                        <!-- 5&12 -->
+                        <p class="name">
+                            The Bends
+                        </p>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+
+                        <!-- 6&16-3 -->
+                        <p class="name">
+                            To Pimp a Butterfly
+                        </p>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <!-- <li>These Walls(无)</li> -->
+                        <p class="nul">These Walls(无)</p>
+
+                        <li></li>
+                        <!-- <li>Alright(无)</li> -->
+                        <p class="nul">Alright(无)</p>
+                        <!-- <li>For Sale? (Interlude)(无)</li> -->
+                        <p class="nul">For Sale? (Interlude)(无)</p>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+
+                        <!-- 7&8 -->
+                        <p class="name">
+                            그때 그 날들, 지금 이 순간
+                        </p>
+
+                        <li>헤어지는게 좋겠어</li>
+                        <li>잘 가, 행복하자</li>
+                        <li>가끔 네가 그리울 때가 있어</li>
+                        <li>오늘따라 널</li>
+                        <li>지금도 그때와 같아</li>
+
+                        <li>너 없이도 괜찮아</li>
+                        <li>잘 가, 행복하자 (Inst.)</li>
+                        <li>오늘따라 널 (Inst.)</li>
+
+                        <!-- 8&19 -->
+                        <p class="name">
+                            Rock Symphonies
+                        </p>
+
+                        <li></li>
+                        <li></li>
+                        <li>The 5th</li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <!-- 9&6 -->
+                        <p class="name">
+                            Pike 65: Hold Me Forever (In Memory Of My Mom Nancy York Carroll)
+                        </p>
+
+                        <li>N</li>
+                        <li>Y</li>
+                        <li>C</li>
+                        <li>4</li>
+                        <li>Ev</li>
+
+                        <li>Er</li>
+
+                        <!-- 10&25 -->
+                        <p class="name">
+                            Imaginaerum
+                        </p>
+
+                        <li>Taikatalvi</li>
+                        <li>Storytime</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul>
+                </center>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 播放器结束 -->
+    <div class="piant">
+        <div class="chi">
+            <div class="commentcm ">
+                <div id="vcomments"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+
+    // 音乐播放器
+    var musicNode = document.getElementsByClassName('music')[0];
+    var mlist = document.getElementsByClassName('mlist')[0];
+    var lis = document.getElementsByTagName('li');//
+    var len = lis.length;
+
+
+    //"https://music.163.com/song/media/outer/url?id=xxx.mp3",
+    var musicsrc = [
+        //1Ultimate Grammy Collection - Contemporary Rock(16-1)
+        "https://music.163.com/song/media/outer/url?id=5159449.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159450.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159451.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159452.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159453.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=5159454.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159455.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159456.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159457.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159458.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=5159459.mp3",
+        // "https://music.163.com/song/media/outer/url?id=5159460.mp3",//In My Place(无）
+        "https://music.163.com/song/media/outer/url?id=5159461.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159462.mp3",
+        "https://music.163.com/song/media/outer/url?id=5159463.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=5159464.mp3",
+
+
+        //2The Essential Clash(41)
+        "https://music.163.com/song/media/outer/url?id=19576931.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576932.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576933.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576934.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576935.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576936.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576937.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576938.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576939.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576940.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576941.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576942.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576943.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576944.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576945.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576946.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576947.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576948.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576949.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576950.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576951.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576952.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576953.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576954.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576955.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576956.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576957.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576958.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576959.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576960.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576961.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576962.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576963.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576964.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576965.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576966.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576967.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576968.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576969.mp3",
+        "https://music.163.com/song/media/outer/url?id=19576970.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=19576971.mp3",
+
+        //3Never Mind The Bollocks, Here’s The *** Pistols(12)
+        "https://music.163.com/song/media/outer/url?id=21706806.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706807.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706808.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706809.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706810.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=21706811.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706812.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706813.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706814.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706815.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=21706816.mp3",
+        "https://music.163.com/song/media/outer/url?id=21706817.mp3",
+
+        //4In The Court Of The Crimson King (40th Anniversary Series Deluxe Edition)(47)
+        "https://music.163.com/song/media/outer/url?id=4143634.mp3",//21st Century Schizoid Man (2009 Stereo Mix)
+        "https://music.163.com/song/media/outer/url?id=4143638.mp3",//I Talk To The Wind (2009 Stereo Mix)
+        "https://music.163.com/song/media/outer/url?id=4143641.mp3",//Epitaph (2009 Stereo Mix)
+        "https://music.163.com/song/media/outer/url?id=4143645.mp3",//Moonchild (2009 Stereo Mix)
+        "https://music.163.com/song/media/outer/url?id=4143648.mp3",//The Court Of The Crimson King (2009 Stereo Mix)
+
+        "https://music.163.com/song/media/outer/url?id=4143651.mp3",//Moonchild(Full Version)
+        "https://music.163.com/song/media/outer/url?id=4143654.mp3",//I Talk To The Wind(Duo version)
+        "https://music.163.com/song/media/outer/url?id=4143657.mp3",//I Talk To The Wind(Alternate mix)
+        "https://music.163.com/song/media/outer/url?id=4143661.mp3",//Epitaph(Backing Track)
+        "https://music.163.com/song/media/outer/url?id=4143664.mp3",//Wind Session
+
+        "https://music.163.com/song/media/outer/url?id=4143667.mp3",//21st Century Schizoid Man (Original Master Edition 2004)
+        "https://music.163.com/song/media/outer/url?id=4143670.mp3",//I Talk To The Wind (Original Master Edition 2004)
+        "https://music.163.com/song/media/outer/url?id=4143673.mp3",//Epitaph (Original Master Edition 2004)
+        "https://music.163.com/song/media/outer/url?id=4143676.mp3",//Moonchild (Original Master Edition 2004)
+        "https://music.163.com/song/media/outer/url?id=4143681.mp3",//The Court Of The Crimson King (Original Master Edition 2004)
+
+        "https://music.163.com/song/media/outer/url?id=4143684.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143688.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143692.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143695.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143699.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143702.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143704.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143707.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143709.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143712.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143715.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143719.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143723.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143727.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143731.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143735.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143739.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143743.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143746.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143749.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143752.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143756.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143759.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143762.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143765.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143769.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143772.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143775.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143778.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143781.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=4143783.mp3",
+        "https://music.163.com/song/media/outer/url?id=4143785.mp3",
+
+
+        //5The Bends(12)
+        "https://music.163.com/song/media/outer/url?id=18795416.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795418.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795421.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795423.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795425.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=18795427.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795429.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795431.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795433.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795434.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=18795435.mp3",
+        "https://music.163.com/song/media/outer/url?id=18795436.mp3",
+
+
+        //6To Pimp a Butterfly(16-3)
+        "https://music.163.com/song/media/outer/url?id=31010333.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010332.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010334.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010335.mp3",
+        // "https://music.163.com/song/media/outer/url?id=31010338.mp3",//These Walls(无)
+
+        "https://music.163.com/song/media/outer/url?id=31010337.mp3",
+        // "https://music.163.com/song/media/outer/url?id=31010336.mp3",//Alright(无)
+        // "https://music.163.com/song/media/outer/url?id=31010339.mp3",//For Sale? (Interlude)(无)
+        "https://music.163.com/song/media/outer/url?id=31010343.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010340.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=31010342.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010341.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010345.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010344.mp3",
+        "https://music.163.com/song/media/outer/url?id=31010346.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=31010347.mp3",
+
+
+        //7그때 그 날들, 지금 이 순간（8）
+        "https://music.163.com/song/media/outer/url?id=32683078.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683079.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683080.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683081.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683082.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=32683083.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683084.mp3",
+        "https://music.163.com/song/media/outer/url?id=32683085.mp3",
+
+        //8Rock Symphonies(19)
+        "https://music.163.com/song/media/outer/url?id=1220190.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220195.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220199.mp3",//The 5th
+        "https://music.163.com/song/media/outer/url?id=1220202.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220204.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=1220208.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220212.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220218.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220223.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220228.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=1220233.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220238.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220241.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220247.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220253.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=1220258.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220263.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220266.mp3",
+        "https://music.163.com/song/media/outer/url?id=1220270.mp3",
+
+        //9Pike 65: Hold Me Forever (In Memory Of My Mom Nancy York Carroll)(6)
+        "https://music.163.com/song/media/outer/url?id=28733479.mp3",
+        "https://music.163.com/song/media/outer/url?id=28733480.mp3",
+        "https://music.163.com/song/media/outer/url?id=28733481.mp3",
+        "https://music.163.com/song/media/outer/url?id=28733482.mp3",
+        "https://music.163.com/song/media/outer/url?id=28733483.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=28733484.mp3",
+
+        //10Imaginaerum(25)
+        "https://music.163.com/song/media/outer/url?id=21311952.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311953.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311954.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311955.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311956.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=21311957.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311958.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311959.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311960.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311961.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=21311962.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311963.mp3",
+        "https://music.163.com/song/media/outer/url?id=21311964.mp3",
+        "https://music.163.com/song/media/outer/url?id=479642106.mp3",
+        "https://music.163.com/song/media/outer/url?id=479642105.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=479296201.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296200.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296199.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296198.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296197.mp3",
+
+        "https://music.163.com/song/media/outer/url?id=479296196.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296195.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296194.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296193.mp3",
+        "https://music.163.com/song/media/outer/url?id=479296192.mp3"];//
+    //网易云歌的url
+
+    musicNode.src = musicsrc[0];
+    for (var i = 0; i < len; i++) {//单击改变playmusic
+        (function (i) {
+            lis[i].onclick = function () {
+                musicNode.src = musicsrc[i];
+                musicNode.load();
+                musicNode.play();
+                for (var j = 0; j < len; j++) {
+                    lis[j].className = '';
+                }
+                this.className = 'play';
+            }
+        })(i);
+    }
+    musicNode.onended = function () {//音乐播放完后自动下一曲
+        var ended = getPlay();
+        if (ended == len - 1) {//若为最后一曲则放第一曲
+            musicNode.src = musicsrc[0];
+            lis[0].className = 'play'
+            lis[ended].className = '';
+            musicNode.load();
+            musicNode.play();
+        } else {
+            musicNode.src = musicsrc[ended + 1];
+            lis[ended + 1].className = 'play';
+            lis[ended].className = '';
+            musicNode.load();
+            musicNode.play();
+        }
+
+    }
+    function getPlay() {//获取正在播放music的li
+        for (var i = 0; i < len; i++) {
+            if (lis[i].getAttribute('class') == 'play') {
+                return i
+            }
+        }
+    }
+
+
+
+    //拖拽功能
+    window.onload = () => {
+        //获取拖拽实验对象
+        let el = document.getElementById("blackSquare");
+        //在该对象上绑定鼠标点击事件
+        el.onmousedown = (e) => {
+            //鼠标按下，计算鼠标触点距离元素左侧和顶部的距离
+            let disX = e.clientX - el.offsetLeft;
+            let disY = e.clientY - el.offsetTop;
+            document.onmousemove = function (e) {
+                //计算需要移动的距离
+                let tX = e.clientX - disX;
+                let tY = e.clientY - disY;
+                //移动当前元素
+                if (tX >= 0 && tX <= window.innerWidth - el.offsetWidth) {
+                    el.style.left = tX + 'px';
+                }
+                if (tY >= 0 && tY <= window.innerHeight - el.offsetHeight) {
+                    el.style.top = tY + 'px';
+                }
+            };
+            //鼠标松开时，注销鼠标事件，停止元素拖拽。
+            document.onmouseup = function (e) {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+        }
+    }
+</script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Xpxum9LQ7XhM8b1cb8thSsK1-gzGzoHsz',
+        appKey: 'OxTaKue6Ph7LA4EIseCHy3Hk'
+    })
+</script>
+
+</html>
